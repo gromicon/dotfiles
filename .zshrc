@@ -52,7 +52,7 @@ fpath=(~/tools/zsh-completion/ $fpath)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python pyenv pep8 pylint tmux tmuxinator pip pass sudo zsh-autocomplete colored-man-pages zsh-autosuggestions)
+plugins=(git python pyenv pep8 pylint tmux tmuxinator pip pass sudo zsh-autocomplete colored-man-pages zsh-autosuggestions fasd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,7 +83,6 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # think ev for "edit" vim ..etc..
 # All my Aliases are in a separate file
-alias ea='vim /home/migross/tools/dotfiles/.myaliases' 	
 alias ev='vim /home/migross/tools/dotfiles/.vimrc' 	
 alias et='vim /home/migross/tools/dotfiles/.tmux.conf'
 alias ez='vim /home/migross/tools/dotfiles/.zshrc'
@@ -93,27 +92,30 @@ alias sz='source ~/.zshrc'
 alias ll='ls -all --color'
 alias ls='ls -all --color'
 alias mux='tmuxinator'
+alias x='tmux'
 alias tlee='tree -C . | less -R'
 alias droopy='python ~/tools/droopy/droopy'
 alias burp='java -jar ~/tools/burp/burpsuite_pro_v1.7.27.jar'
 alias searchsploit='/home/migross/tools/exploit-database/searchsploit'
+alias m='/home/migross/tools/scripts/mako.sh'
 alias mako='/home/migross/tools/scripts/mako.sh'
 alias webgoat='java -jar /home/migross/tools/training/webgoat/webgoat-container-7.1-exec.jar -httpPort 9090'
 alias dirbuster='java -jar /home/migross/tools/dirbuster/DirBuster-0.12.jar'
 alias testssl='/home/migross/tools/testssl.sh'
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-alias r="ranger"
+alias r='ranger'
 alias vims="vim --servername vim"
 alias thc-ssl-dos="/home/migross/tools/thc-ssl-dos/thc-ssl-dos-1.4/src/thc-ssl-dos"
 alias rw="python3 /home/migross/tools/report-writer/rw.py"
 alias c='clear'
-alias r='ranger'
 alias sdc='/home/migross/tools/sdc/sdc.sh'
 alias ip='ip --color'
+
 source /home/migross/tools/sydotfiles/.sy_zsh
 
 # set default editor
 export EDITOR="vim"
+
 
 # set vi mode settings
 # bindkey -v
@@ -128,4 +130,4 @@ bindkey '^ ' autosuggest-accept
 #start fasd
 eval "$(fasd --init auto)"
 
-
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

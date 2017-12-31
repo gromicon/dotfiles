@@ -9,31 +9,34 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'tomasr/molokai'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'valloric/youcompleteme'
 Plugin 'sirver/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'VOoM'
 Plugin 'lervag/vimtex'
-Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'honza/vim-snippets'
 Plugin 'godlygeek/tabular'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'francoiscabrol/ranger.vim'
+
+
 
 " #2 Marker to add plugins
 " Plugin 'tpope/vim-commentary'
 " Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'raimondi/delimitmate'
+" Plugin 'kien/ctrlp.vim'
+" Plugin 'tpope/vim-fugitive'
 
 
 
@@ -53,23 +56,20 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+set background=light
+colorscheme PaperColor 
+
+set clipboard=unnamedplus
 set number relativenumber 
 set cursorline
 set showcmd
-colorscheme molokai
-"colorscheme solorized
-set clipboard=unnamedplus
 set noswapfile
-set showmatch                       " show bracket matches
-set ruler                           " show row and column in footer
-set scrolloff=2                     " minimum lines above/below cursor
+set showmatch                       " show bracket matches set ruler                           " show row and column in footer
 set laststatus=2                    " always show status bar
 set nofoldenable                    " disable code folding
 set undofile                        " Maintain undo history between sessions
 set undodir=~/.vim/undodir
 set pastetoggle=<F2>                " easily toggle between vim-paste-mode
-set list
-set listchars=tab:>-,trail:.,extends:#,nbsp:.
 set ts=4                            " set indent to two spaces
 set shiftwidth=2                    " sets the width when shifting (</>) left or right
 set expandtab                       " use spaces not tab characters
@@ -79,6 +79,9 @@ set hlsearch
 set incsearch
 set ignorecase
 set mouse=a
+set splitbelow
+set splitright
+
 
 " set the current vim path to file/tab
 " autocmd BufEnter * lcd %:p:h
@@ -91,29 +94,22 @@ set mouse=a
   inoremap jj <Esc>
   inoremap jk <Esc>
   vnoremap ff <Esc><Esc>
-  "nnoremap <C-u> :UltiSnipsEdit<CR>
   nnoremap <C-u> :VoomToggle latex<CR>
   nnoremap ss :w<CR>
-
-
-" Leader Mappings
-  let mapleader="\<space>"
-  " reload Vimrc
-  nnoremap <leader>sv :source $MYVIMRC<CR>
-  nnoremap <leader>ev :vsplit $MYVIMRC<CR>
-  nnoremap <leader>c :VimuxPromptCommand<CR><CR>
-  "nnoremap <leader>u :VoomToggle latex<CR>
-  nnoremap <leader>u :UltiSnipsEdit<CR>
-  nnoremap <leader>n :NERDTreeToggle<CR>
-  nnoremap <leader>t :TagbarToggle<CR>
-  nnoremap <leader>q :q!<CR>
-  "nnoremap <leader>s :w<CR>
-
-" split navigation
+  " split navigation
   nnoremap <C-j> <C-w><C-j>
   nnoremap <C-k> <C-w><C-k>
   nnoremap <C-l> <C-w><C-l>
   nnoremap <C-h> <C-w><C-h>
+
+" Leader Mappings
+  let mapleader="\<space>"
+  nnoremap <leader>e :VimuxPromptCommand<CR><CR>
+  nnoremap <leader>u :UltiSnipsEdit<CR>
+  nnoremap <leader>n :NERDTreeToggle<CR>
+  nnoremap <leader>t :TagbarToggle<CR>
+  nnoremap <leader>q :q!<CR>
+  nnoremap <leader>r :call RangerExplorer()<CR>
 
 " ######################
 " Plugin specific Mappings 
@@ -176,11 +172,11 @@ function RangerExplorer()
     if filereadable('/tmp/vim_ranger_current_file')
       exec 'edit ' . system('cat /tmp/vim_ranger_current_file | sed -E "s/\ /\\\ /g"')
       call system('rm /tmp/vim_ranger_current_file')
+
   endif
 redraw!
 endfun
 
-map <Leader>r :call RangerExplorer()<CR>
 
 
 
