@@ -1,7 +1,8 @@
 fpath=(~/tools/zsh-completion/ $fpath)
 
 # Path to your oh-my-zsh installation.
- export ZSH=/home/migross/.oh-my-zsh
+export USER=gromicon
+export ZSH=/home/$USER/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -83,9 +84,9 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # think ev for "edit" vim ..etc..
 # All my Aliases are in a separate file
-alias ev='vim /home/migross/tools/dotfiles/.vimrc' 	
-alias et='vim /home/migross/tools/dotfiles/.tmux.conf'
-alias ez='vim /home/migross/tools/dotfiles/.zshrc'
+alias ev='vim /home/$USER/tools/dotfiles/.vimrc' 	
+alias et='vim /home/$USER/tools/dotfiles/.tmux.conf'
+alias ez='vim /home/$USER/tools/dotfiles/.zshrc'
 alias sv='source ~/.vimrc'
 alias st='source ~/.tmux.conf'
 alias sz='source ~/.zshrc'
@@ -96,22 +97,22 @@ alias x='tmux'
 alias tlee='tree -C . | less -R'
 alias droopy='python ~/tools/droopy/droopy'
 alias burp='java -jar ~/tools/burp/burpsuite_pro_v1.7.27.jar'
-alias searchsploit='/home/migross/tools/exploit-database/searchsploit'
-alias m='/home/migross/tools/scripts/mako.sh'
-alias mako='/home/migross/tools/scripts/mako.sh'
-alias webgoat='java -jar /home/migross/tools/training/webgoat/webgoat-container-7.1-exec.jar -httpPort 9090'
-alias dirbuster='java -jar /home/migross/tools/dirbuster/DirBuster-0.12.jar'
-alias testssl='/home/migross/tools/testssl.sh'
+alias searchsploit='/home/$USER/tools/exploit-database/searchsploit'
+alias m='/home/$USER/tools/scripts/mako.sh'
+alias mako='/home/$USER/tools/scripts/mako.sh'
+alias webgoat='java -jar /home/$USER/tools/training/webgoat/webgoat-container-7.1-exec.jar -httpPort 9090'
+alias dirbuster='java -jar /home/$USER/tools/dirbuster/DirBuster-0.12.jar'
+alias testssl='/home/$USER/tools/testssl.sh'
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias r='ranger'
 alias vims="vim --servername vim"
-alias thc-ssl-dos="/home/migross/tools/thc-ssl-dos/thc-ssl-dos-1.4/src/thc-ssl-dos"
-alias rw="python3 /home/migross/tools/report-writer/rw.py"
+alias thc-ssl-dos="/home/$USER/tools/thc-ssl-dos/thc-ssl-dos-1.4/src/thc-ssl-dos"
+alias rw="python3 /home/$USER/tools/report-writer/rw.py"
 alias c='clear'
-alias sdc='/home/migross/tools/sdc/sdc.sh'
+alias sdc='/home/$USER/tools/sdc/sdc.sh'
 alias ip='ip --color'
 
-source /home/migross/tools/sydotfiles/.sy_zsh
+source /home/$USER/tools/sydotfiles/.sy_zsh
 
 # set default editor
 export EDITOR="vim"
