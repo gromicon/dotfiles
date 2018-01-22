@@ -1,7 +1,7 @@
 fpath=(~/tools/zsh-completion/ $fpath)
 
 # Path to your oh-my-zsh installation.
-export USER=gromicon
+export USER=migross
 export ZSH=/home/$USER/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -102,7 +102,7 @@ alias m='/home/$USER/tools/scripts/mako.sh'
 alias mako='/home/$USER/tools/scripts/mako.sh'
 alias webgoat='java -jar /home/$USER/tools/training/webgoat/webgoat-container-7.1-exec.jar -httpPort 9090'
 alias dirbuster='java -jar /home/$USER/tools/dirbuster/DirBuster-0.12.jar'
-alias testssl='/home/$USER/tools/testssl.sh'
+alias testssl='sudo /home/$USER/tools/testssl.sh/testssl.sh'
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias r='ranger'
 alias vims="vim --servername vim"
@@ -111,6 +111,9 @@ alias rw="python3 /home/$USER/tools/report-writer/rw.py"
 alias c='clear'
 alias sdc='/home/$USER/tools/sdc/sdc.sh'
 alias ip='ip --color'
+alias rw='/home/$USER/tools/report-writer/rw.py'
+alias sdc='sudo /home/$USER/tools/sdc/sdc.sh'
+alias nh='python3 /home/$USER/tools/nessus-helper/nessus-helper.py'
 
 source /home/$USER/tools/sydotfiles/.sy_zsh
 
@@ -123,7 +126,8 @@ export EDITOR="vim"
 # bindkey -M viins 'jj' vi-cmd-mode
 
 # Map Capslock to Control-Key
-setxkbmap -layout de -option ctrl:nocaps
+ setxkbmap -layout de -option ctrl:nocaps
+# setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
 
 # Map autosuggestion accept to ctrl+<space>
 bindkey '^ ' autosuggest-accept
@@ -132,3 +136,4 @@ bindkey '^ ' autosuggest-accept
 eval "$(fasd --init auto)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

@@ -18,7 +18,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'valloric/youcompleteme'
+Plugin 'valloric/youcompleteme'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'VOoM'
@@ -28,7 +28,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
 Plugin 'francoiscabrol/ranger.vim'
-
+Plugin 'raimondi/delimitmate'
 
 
 " #2 Marker to add plugins
@@ -117,11 +117,11 @@ set splitright
 
 " UltiSnips and YouCompleteMe
   let g:UltiSnipsEditSplit="vertical"
-  let g:UltiSnipsSnippetsDir='~/.vim/mysnippet'
-  let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippet"]
+  let g:UltiSnipsSnippetsDir='~/know-how/mysnippets'
+  let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
   let g:UltiSnipsExpandTrigger = "<C-h>"    "expand snippet
-  let g:UltiSnipsJumpForwardTrigger = "<C-j>"  "jump to next marker in snippet
-  let g:UltiSnipsJumpBackwardTrigger = "<C-k>" "jump to previous marker in snippet
+  let g:UltiSnipsJumpForwardTrigger = "<Tab>"  "jump to next marker in snippet
+  let g:UltiSnipsJumpBackwardTrigger = "<s-Tab>" "jump to previous marker in snippet
   let g:ycm_key_invoke_completion = '<C-Space>'    " invoke ycm when it is currently not active
   let g:ycm_key_list_select_completion = ['<C-j>'] " move down in ycm
   let g:ycm_key_list_previous_completion = ['<C-k>'] " move up in ycm
