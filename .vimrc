@@ -64,7 +64,8 @@ set number relativenumber
 set cursorline
 set showcmd
 set noswapfile
-set showmatch                       " show bracket matches set ruler                           " show row and column in footer
+set showmatch                       " show bracket matches 
+set ruler                           " show row and column in footer
 set laststatus=2                    " always show status bar
 set nofoldenable                    " disable code folding
 set undofile                        " Maintain undo history between sessions
