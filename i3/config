@@ -88,42 +88,43 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $prog Prog 
 set $browse Browse
-set $dummy Dummy
-set $genesis Genesis
-set $mail Mail
-set $chat Chat
-set $notes Notes
 set $burp Burp
 set $latex Latex
-set $shell Shell
+set $rootserver Rootserver
+set $test Test
+set $notes Notes
+set $chat Chat
+set $mail Mail
+set $genesis Genesis
 
 # switch to workspace
-bindsym $mod+1 workspace 1 $dummy
+bindsym $mod+1 workspace 1 $prog
 bindsym $mod+2 workspace 2 $browse
 bindsym $mod+3 workspace 3 $burp
 bindsym $mod+4 workspace 4 $latex
-bindsym $mod+5 workspace 5 $shell
-bindsym $mod+6 workspace 6
+bindsym $mod+5 workspace 5 $rootserver
+bindsym $mod+6 workspace 6 $test
 bindsym $mod+7 workspace 7 $notes
 bindsym $mod+8 workspace 8 $chat
 bindsym $mod+9 workspace 9 $mail
 bindsym $mod+0 workspace 10 $genesis
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1 $work
+bindsym $mod+Shift+1 move container to workspace number 1 $prog
 bindsym $mod+Shift+2 move container to workspace number 2 $browse
 bindsym $mod+Shift+3 move container to workspace number 3 $burp
 bindsym $mod+Shift+4 move container to workspace number 4 $latex
-bindsym $mod+Shift+5 move container to workspace number 5 $shell
-bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+5 move container to workspace number 5 $rootserver
+bindsym $mod+Shift+6 move container to workspace number 6 $test
 bindsym $mod+Shift+7 move container to workspace number 7 $notes
 bindsym $mod+Shift+8 move container to workspace number 8 $chat
 bindsym $mod+Shift+9 move container to workspace number 9 $mail
 bindsym $mod+Shift+0 move container to workspace number 10 $genesis
 
-#assign [class="Firefox"] 2 $browse
-#assign [class="Chromium"] 2 $browse
+assign [class="Firefox"] 6 $test
+assign [class="Chromium"] 2 $browse
 #assign [class="TexMaker"] 1 $work
 assign [class="Thunderbird"] 9 $mail
 assign [class="Pidgin"] 8 $chat
@@ -132,6 +133,8 @@ assign [class="Pidgin"] 8 $chat
 assign [class="Zim"] 7 $notes
 assign [class="Keepnote"] 7 $notes
 assign [class="Cherrytree"] 7 $notes
+assign [class="Autochrome"] 6 $test
+assign [class="Burp"] 3 $burp
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -184,7 +187,7 @@ bar {
 
 # personal specific binding
 bindsym $mod+Escape exec i3lock 
-bindsym $mod+d exec "rofi -combi-modi window,drun,ssh -show combi"
+bindsym $mod+d exec "rofi -combi-modi window,drun,ssh,j4 -show combi"
 
 
 # move workspaces
@@ -237,6 +240,7 @@ for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Cinnamon-settings.py"] floating enable
 for_window [class="^rdesktop"] floating disable
 for_window [class="copyq"] floating enable
+
 # Autostart
 #exec --no-startup-id nm-applet
 #exec --no-startup-id blueman-applet
@@ -250,6 +254,9 @@ for_window [class="copyq"] floating enable
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id synergy
 bindsym Print exec --no-startup-id "shutter --select"
+exec --no-startup-id .screenlayout/layout.sh
+
+
 
 ###############################
 # Memo keyboard labels

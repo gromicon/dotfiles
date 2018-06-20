@@ -9,7 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
  # ZSH_THEME="bureau"
- ZSH_THEME="blinks"
+ ZSH_THEME="bira"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -76,15 +76,16 @@ alias ei="vim $HOME/.config/i3/config"
 alias sv='source ~/.vimrc'
 alias st='source ~/.tmux.conf'
 alias sz='source ~/.zshrc'
-alias ll='ls -all --color'
+alias ll='ls -all --color | less'
 alias ls='ls -all --color'
 alias mux='tmuxinator'
-alias x='tmux'
+alias x='xdg-open '
 alias tlee='tree -C . | less -R'
 alias droopy='python ~/tools/droopy/droopy'
 alias burp='java -jar ~/tools/burp/burpsuite_pro_v1.7.27.jar'
 alias searchsploit="$HOME/tools/exploit-database/searchsploit"
 alias m="$HOME/tools/scripts/mako.sh"
+alias nm="$HOME/tools/scripts/new-mako.sh"
 alias mako="$HOME/tools/scripts/mako.sh"
 alias webgoat="java -jar $HOME/tools/training/webgoat/webgoat-container-7.1-exec.jar -httpPort 9090"
 alias dirbuster="java -jar $HOME/tools/dirbuster/DirBuster-0.12.jar"
@@ -92,14 +93,18 @@ alias testssl="sudo $HOME/tools/testssl.sh/testssl.sh"
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias r='ranger'
 alias thc-ssl-dos="$HOME/tools/thc-ssl-dos/thc-ssl-dos-1.4/src/thc-ssl-dos"
-alias rw="python3 $HOME/tools/report-writer/rw.py"
+alias rw="$HOME/tools/report-writer/rw.sh "
 alias c='clear'
-alias sdc="$HOME/tools/sdc/sdc.sh"
 alias ip='ip --color'
-alias rw="$HOME/tools/report-writer/rw.py"
 alias sdc="sudo $HOME/tools/sdc/sdc.sh"
 alias nh='python3 /home/$USER/tools/nessus-helper/nessus-helper.py'
-
+alias sudo='sudo env PATH=$PATH'  
+alias lyncsmash='python2 /home/$USER/tools/lyncsmash/lyncsmash.py'
+alias theHarvester='python /home/$USER/tools/theHarvester/theHarvester.py '
+alias recon-ng='/home/$USER/tools/recon-ng/recon-ng '
+alias netns='sudo /home/$USER/tools/netns/netns.sh '
+alias nikto='/home/migross/tools/nikto/program/nikto.pl '
+alias sqlmap='python /home/migross/tools/sqlmap/sqlmap.py '
 source $HOME/tools/sydotfiles/.sy_zsh
 
 # set default editor
@@ -124,6 +129,9 @@ eval "$(fasd --init auto)"
 # append netns to PATH
 path+=$HOME/tools/netns
 path+=$HOME/tools/mobile
+path+=$HOME/.local/share/applications
+path+=$HOME/tools/android/android-studio-ide-173.4819257-linux/android-studio/bin/
+path+=$HOME/Android/Sdk/platform-tools
 
 #export PATH=$PATH:$HOME/tools/netns
 export PATH

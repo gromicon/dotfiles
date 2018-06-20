@@ -76,7 +76,6 @@ set ts=4                            " set indent to two spaces
 set shiftwidth=2                    " sets the width when shifting (</>) left or right
 set expandtab                       " use spaces not tab characters
 set autoindent
-set nowrap                         " set no line wrap
 set hlsearch
 set incsearch
 set ignorecase
@@ -84,6 +83,8 @@ set mouse=a
 set splitbelow
 set splitright
 
+set wrap
+"set nowrap                         " set no line wrap
 
 " set the current vim path to file/tab
 " autocmd BufEnter * lcd %:p:h
@@ -99,6 +100,11 @@ set splitright
   nnoremap ff :nohls<CR>
   nnoremap <C-u> :VoomToggle latex<CR>
   nnoremap ss :w<CR>
+  "Jump to Tag = ä; jump back = ü
+  nnoremap ä <C-]> 
+  nnoremap ü <C-O>
+  nnoremap <A-k> ddkp 
+  
   " split navigation
   nnoremap <C-j> <C-w><C-j>
   nnoremap <C-k> <C-w><C-k>
@@ -113,6 +119,8 @@ set splitright
   nnoremap <leader>t :TagbarToggle<CR>
   nnoremap <leader>q :q!<CR>
   nnoremap <leader>r :call RangerExplorer()<CR>
+  nnoremap <leader>l :set wrap!<CR> "! means -> set wrap to the opposite as it is currently"
+  nnoremap <leader>p "0p
 
 " ######################
 " Plugin specific Mappings 
@@ -179,8 +187,6 @@ function RangerExplorer()
   endif
 redraw!
 endfun
-
-
 
 
 
