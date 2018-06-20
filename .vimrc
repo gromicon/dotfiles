@@ -21,7 +21,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'valloric/youcompleteme'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'VOoM'
+Plugin 'https://github.com/vim-voom/VOoM'
+"Plugin 'VOoM'
 Plugin 'lervag/vimtex'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
@@ -95,6 +96,7 @@ set splitright
   inoremap jj <Esc>
   inoremap jk <Esc>
   vnoremap ff <Esc><Esc>
+  nnoremap ff :nohls<CR>
   nnoremap <C-u> :VoomToggle latex<CR>
   nnoremap ss :w<CR>
   " split navigation

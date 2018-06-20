@@ -2,7 +2,7 @@ fpath=(~/tools/zsh-completion/ $fpath)
 
 # Path to your oh-my-zsh installation.
 export USER=migross
-export ZSH=/home/$USER/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -69,10 +69,10 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # think ev for "edit" vim ..etc..
 # All my Aliases are in a separate file
-alias ev='vim /home/$USER/tools/dotfiles/.vimrc' 	
-alias et='vim /home/$USER/tools/dotfiles/.tmux.conf'
-alias ez='vim /home/$USER/tools/dotfiles/.zshrc'
-alias ei='vim /home/$USER/.config/i3/config'
+alias ev="vim $HOME/tools/dotfiles/.vimrc"
+alias et="vim $HOME/tools/dotfiles/.tmux.conf"
+alias ez="vim $HOME/tools/dotfiles/.zshrc"
+alias ei="vim $HOME/.config/i3/config"
 alias sv='source ~/.vimrc'
 alias st='source ~/.tmux.conf'
 alias sz='source ~/.zshrc'
@@ -83,25 +83,24 @@ alias x='tmux'
 alias tlee='tree -C . | less -R'
 alias droopy='python ~/tools/droopy/droopy'
 alias burp='java -jar ~/tools/burp/burpsuite_pro_v1.7.27.jar'
-alias searchsploit='/home/$USER/tools/exploit-database/searchsploit'
-alias m='/home/$USER/tools/scripts/mako.sh'
-alias mako='/home/$USER/tools/scripts/mako.sh'
-alias webgoat='java -jar /home/$USER/tools/training/webgoat/webgoat-container-7.1-exec.jar -httpPort 9090'
-alias dirbuster='java -jar /home/$USER/tools/dirbuster/DirBuster-0.12.jar'
-alias testssl='sudo /home/$USER/tools/testssl.sh/testssl.sh'
+alias searchsploit="$HOME/tools/exploit-database/searchsploit"
+alias m="$HOME/tools/scripts/mako.sh"
+alias mako="$HOME/tools/scripts/mako.sh"
+alias webgoat="java -jar $HOME/tools/training/webgoat/webgoat-container-7.1-exec.jar -httpPort 9090"
+alias dirbuster="java -jar $HOME/tools/dirbuster/DirBuster-0.12.jar"
+alias testssl="sudo $HOME/tools/testssl.sh/testssl.sh"
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias r='ranger'
-alias vims="vim --servername vim"
-alias thc-ssl-dos="/home/$USER/tools/thc-ssl-dos/thc-ssl-dos-1.4/src/thc-ssl-dos"
-alias rw="python3 /home/$USER/tools/report-writer/rw.py"
+alias thc-ssl-dos="$HOME/tools/thc-ssl-dos/thc-ssl-dos-1.4/src/thc-ssl-dos"
+alias rw="python3 $HOME/tools/report-writer/rw.py"
 alias c='clear'
-alias sdc='/home/$USER/tools/sdc/sdc.sh'
+alias sdc="$HOME/tools/sdc/sdc.sh"
 alias ip='ip --color'
-alias rw='/home/$USER/tools/report-writer/rw.py'
-alias sdc='sudo /home/$USER/tools/sdc/sdc.sh'
+alias rw="$HOME/tools/report-writer/rw.py"
+alias sdc="sudo $HOME/tools/sdc/sdc.sh"
 alias nh='python3 /home/$USER/tools/nessus-helper/nessus-helper.py'
 
-source /home/$USER/tools/sydotfiles/.sy_zsh
+source $HOME/tools/sydotfiles/.sy_zsh
 
 # set default editor
 export EDITOR="vim"
@@ -122,3 +121,9 @@ eval "$(fasd --init auto)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# append netns to PATH
+path+=$HOME/tools/netns
+path+=$HOME/tools/mobile
+
+#export PATH=$PATH:$HOME/tools/netns
+export PATH
